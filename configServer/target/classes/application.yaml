@@ -1,0 +1,11 @@
+server:
+   port: 9296
+spring:
+  application:
+    name: CONFIGSERVER
+  cloud:
+    config:
+      server:
+        git:
+         uri: https://github.com/Hsharma099/spring_microservshoppingcart
+         clone-on-start: true
