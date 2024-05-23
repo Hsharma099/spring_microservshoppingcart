@@ -1,0 +1,23 @@
+server:
+  port: 8082
+management:
+   tracing:
+    sampling:
+      probability: 1.0
+spring:
+  application:
+    name: PaymentService
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        formatsql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/payment_db
+    username: postgres
+    password: root
+  config:
+    import: configserver:http://localhost:9296
